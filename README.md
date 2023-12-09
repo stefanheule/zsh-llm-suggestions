@@ -8,8 +8,51 @@ the command.
 
 ## Installation
 
+Clone the repository:
+
+```
+git clone git@github.com:stefanheule/zsh-llm-suggestions.git ~/zsh/zsh-llm-suggestions
+```
+
+Source the script and configure the hotkey in `.zshrc`:
+
+```
+source ~/zsh/zsh-llm-suggestions/zsh-llm-suggestions.zsh
+bindkey '^o' zsh_llm_suggestions_openai
+bindkey '^p' zsh_llm_suggestions_github_copilot
+```
+
+Make sure `python3` is installed.
+
+Both LLMs require a bit of configuration, but they should automatically suggest
+commands to fix what is missing (or tell you how to). Here's what's required:
+
+For `zsh_llm_suggestions_openai` (OpenAI-based suggestions):
+- Set the `OPENAI_API_KEY` environment variable to your API key. You can get it
+  from [https://platform.openai.com/api-keys](platform.openai.com/api-keys). Note
+  that every suggestion costs a small amount of money, you are solely responsible for
+  these charges.
+  ```
+  export OPENAI_API_KEY="..."
+  ```
+- Install the Python 3 package `openai`:
+  ```
+  pip3 install openai
+  ```
+
+For `zsh_llm_suggestions_github_copilot` (GitHub Copilot suggestions):
+- Install GitHub CLI: Follow [https://github.com/cli/cli#installation](github.com/cli/cli#installation).
+- Authenticate with GitHub:
+  ```
+  /usr/bin/gh auth login --web -h github.com
+  ```
+- Install GitHub Copilot extension:
+  ```
+  /usr/bin/gh extension install github/gh-copilot
+  ```
+
 ## Supported LLMs
 
 Right now, two LLMs are supported:
 1. GitHub Copilot (via GitHub CLI). Requires a GitHub Copilot subscription.
-2. OpenAI. Requires an OpenAI API key.
+2. OpenAI. Requires an OpenAI API key. Currently uses `gpt-4-1106-preview`.
