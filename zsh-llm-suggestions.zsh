@@ -52,7 +52,7 @@ zsh_llm_completion() {
   CURSOR=${#ZSH_LLM_SUGGESTIONS_LAST_RESULT}
 }
 
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+SCRIPT_DIR=$( cd -- "$( dirname -- "$0" )" &> /dev/null && pwd )
 
 zsh_llm_suggestions_openai() {
   zsh_llm_completion "$SCRIPT_DIR/zsh-llm-suggestions-openai.py"
