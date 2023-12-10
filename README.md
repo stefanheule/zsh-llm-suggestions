@@ -8,6 +8,11 @@ You describe what you would like to do directly in your prompt, you hit a
 keyboard shortcut of your choosing, and the LLM replaces your request with
 the command.
 
+Similarly, if you have a command that you don't understand, `zsh-llm-suggestions`
+can query an LLM for you to explain that command. You can combine these, by
+first generating a command from a human description, and then asking the LLM
+to explain the command.
+
 ## Installation
 
 Clone the repository:
@@ -20,8 +25,10 @@ Source the script and configure the hotkey in `.zshrc`:
 
 ```
 source ~/zsh/zsh-llm-suggestions/zsh-llm-suggestions.zsh
-bindkey '^o' zsh_llm_suggestions_openai
-bindkey '^p' zsh_llm_suggestions_github_copilot
+bindkey '^o' zsh_llm_suggestions_openai # Ctrl + O to have OpenAI suggest a command given a English description
+bindkey '^[^o' zsh_llm_suggestions_openai_explain # Ctrl + alt + O to have OpenAI explain a command
+bindkey '^p' zsh_llm_suggestions_github_copilot # Ctrl + P to have GitHub Copilot suggest a command given a English description
+bindkey '^[^p' zsh_llm_suggestions_github_copilot_explain # Ctrl + alt + P to have GitHub Copilot explain a command
 ```
 
 Make sure `python3` is installed.
@@ -43,6 +50,10 @@ For `zsh_llm_suggestions_openai` (OpenAI-based suggestions):
   ```
   pip3 install openai
   ```
+- Optional, if you want syntax highlighting for the command explanation, install pygments
+  ```
+  pip3 install pygments
+  ```
 
 For `zsh_llm_suggestions_github_copilot` (GitHub Copilot suggestions):
 - Install GitHub CLI: Follow [https://github.com/cli/cli#installation](github.com/cli/cli#installation).
@@ -57,12 +68,20 @@ For `zsh_llm_suggestions_github_copilot` (GitHub Copilot suggestions):
 
 ## Usage
 
-Type out what you'd like to do in English, then hit CTRL+P or CTRL+O (or whatever hotkey)
+### LLM suggested commands
+
+Type out what you'd like to do in English, then hit ctrl+P or ctrl+O (or whatever hotkey)
 you configured. `zsh-llm-suggestions` will then query OpenAI or GitHub Copilot, and replace
 the query with the command suggested.
 
-If you don't like the suggestion and think the LLM can do better, just hit CTRL+P/O again,
+If you don't like the suggestion and think the LLM can do better, just hit ctrl+P/O again,
 and a new suggestion will be fetched.
+
+### Explain commands using LLM
+
+If you typed a command (or maybe the LLM generated one) that you don't understand, hit
+ctrl+alt+O to have OpenAI explain the command in English, or hit ctrl+alt+P to have
+GitHub Copilot explain it.
 
 ## Warning
 
