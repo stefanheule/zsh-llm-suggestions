@@ -1,0 +1,6 @@
+[0m  • [93;1mgit shortlog -s -n[0m generates a summarized list of commit authors in Git history.                                    
+    • [93;1m-s[0m displays only the number of commits per author.                                                                
+    • [93;1m-n[0m sorts the output by the number of commits in descending order.                                                 
+  • [93;1m|[0m (pipe) redirects the output of the previous command to the next command.                                          
+  • [93;1mhead -n 1[0m displays the first line of the input.                                                                     
+    • [93;1m-n 1[0m specifies that we want to display only the first line.

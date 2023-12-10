@@ -1,0 +1,1 @@
+git submodule deinit -f modules/zsh-async && git rm -f modules/zsh-async && rm -rf .git/modules/zsh-async

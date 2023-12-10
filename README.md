@@ -101,4 +101,4 @@ Right now, two LLMs are supported:
 Small source of inspiration:
 - who contributed the most to this git repository?
 - tell me a joke
-- delete the git submodule called modules/foo
+- delete the git submodule called modules/zsh-async
