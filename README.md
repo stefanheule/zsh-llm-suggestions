@@ -1,5 +1,7 @@
 # LLM-based command suggestions for zsh
 
+![Demo of zsh-llm-suggestions](https://github.com/stefanheule/zsh-llm-suggestions/blob/master/zsh-llm-suggestions.gif?raw=true)
+
 `zsh` commands can be difficult to remember, but LLMs are great at turning
 human descriptions of what to do into a command. Enter `zsh-llm-suggestions`:
 You describe what you would like to do directly in your prompt, you hit a
@@ -52,6 +54,22 @@ For `zsh_llm_suggestions_github_copilot` (GitHub Copilot suggestions):
   ```
   /usr/bin/gh extension install github/gh-copilot
   ```
+
+## Usage
+
+Type out what you'd like to do in English, then hit CTRL+P or CTRL+O (or whatever hotkey)
+you configured. `zsh-llm-suggestions` will then query OpenAI or GitHub Copilot, and replace
+the query with the command suggested.
+
+If you don't like the suggestion and think the LLM can do better, just hit CTRL+P/O again,
+and a new suggestion will be fetched.
+
+## Warning
+
+There are some risks using `zsh-llm-suggestions`:
+1. LLMs can suggest bad commands, it is up to you to make sure you
+   are okay executing the commands.
+2. The supported LLMs are not free, so you might incur a cost when using `zsh-llm-suggestions`.
 
 ## Supported LLMs
 
