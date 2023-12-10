@@ -24,8 +24,10 @@ bindkey '^p' zsh_llm_suggestions_github_copilot
 
 Make sure `python3` is installed.
 
-Both LLMs require a bit of configuration, but they should automatically suggest
-commands to fix what is missing (or tell you how to). Here's what's required:
+Both LLMs require a bit of configuration. Either follow the rest of the instructions
+here, or just enter something on the prompt (because an empty prompt won't run the
+LLM) and hit your configured keyboard shortcut. Instead of answering the prompt, it will
+tell you how to finish the setup.
 
 For `zsh_llm_suggestions_openai` (OpenAI-based suggestions):
 - Set the `OPENAI_API_KEY` environment variable to your API key. You can get it
