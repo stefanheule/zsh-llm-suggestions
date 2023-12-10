@@ -3,6 +3,33 @@
 # saved some real answers in the demo folder. This function will cycle through
 # them for a demo.
 
+# To record:
+# - ZSH_LLM_SUGGESTIONS_DEMO_NR=0
+# - ctrl+l
+# - start recording
+# - type: who contributed the most to this git repository?
+# - ctrl+o
+# - ctrl+o
+# - enter
+# - ctrl+l
+# - type: tell me a joke
+# - ctrl+o
+# - ctrl+l
+# - type: delete the git submodule called modules/zsh-async
+# - ctrl+o
+# - ctrl+o
+# - ctrl+l
+
+# I use ScreenToGif to record and add subtitles.
+
+# Subtitles:
+# - Press ctrl+p to ask an LLM for a suggestion
+# - The LLM result is shown in the prompt
+# - Great, but what exactly does this command do? Press ctrl+shift+o to ask the LLM to explain.
+# - Explanation appears above the prompt. Hit enter to run the command if it looks good.
+# - Several LLMs are supported, e.g. ctrl+o for OpenAI's GPT4, ctrl+p for GitHub Copilot.
+# - Sometimes, LLMs give bad suggestions. Press ctrl+p again to get a new suggestion for the same query. Or press ctrl+o to switch to a different LLM.
+
 zsh_llm_suggestions_spinner() {
     local delay=0.1
     local spinstr='|/-\'
