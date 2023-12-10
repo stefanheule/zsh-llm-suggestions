@@ -37,6 +37,9 @@ def main():
     return 0
 
   if 'unknown command "copilot" for "gh"' in error:
+    if "You are not logged into any GitHub hosts" in subprocess.run(['/usr/bin/gh', 'auth', 'status'], text=True, stderr=subprocess.PIPE, stdout=subprocess.DEVNULL).stderr:
+      print(f"echo '{MISSING_PREREQUISITES} Authenticate with github first:' && /usr/bin/gh auth login --web -h github.com")
+      return 0
     print(f"echo '{MISSING_PREREQUISITES} Install github copilot extension first:' && /usr/bin/gh extension install github/gh-copilot")
     return 0
 
