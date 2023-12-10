@@ -58,3 +58,10 @@ For `zsh_llm_suggestions_github_copilot` (GitHub Copilot suggestions):
 Right now, two LLMs are supported:
 1. GitHub Copilot (via GitHub CLI). Requires a GitHub Copilot subscription.
 2. OpenAI. Requires an OpenAI API key. Currently uses `gpt-4-1106-preview`.
+
+## Prompt ideas
+
+Small source of inspiration:
+- who contributed the most to this git repository?
+- tell me a joke
+- delete the git submodule called modules/foo
