@@ -14,17 +14,17 @@
 # - ctrl+l
 # - type: tell me a joke
 # - ctrl+o
-# - ctrl+l
+# - ctrl+u
 # - type: delete the git submodule called modules/zsh-async
 # - ctrl+o
 # - ctrl+o
-# - ctrl+l
+# - ctrl+u
 
 # I use ScreenToGif to record and add subtitles.
 
 # Subtitles:
 # - Press ctrl+p to ask an LLM for a suggestion
-# - The LLM result is shown in the prompt
+# - The LLM result is shown directly in the prompt
 # - Great, but what exactly does this command do? Press ctrl+shift+o to ask the LLM to explain.
 # - Explanation appears above the prompt. Hit enter to run the command if it looks good.
 # - Several LLMs are supported, e.g. ctrl+o for OpenAI's GPT4, ctrl+p for GitHub Copilot.
