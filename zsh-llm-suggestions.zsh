@@ -3,7 +3,14 @@ zsh_llm_suggestions_spinner() {
     local pid=$1
     local delay=0.1
     local spinstr='|/-\'
+
+    cleanup() {
+      kill $pid
+      echo -ne "\e[?25h"
+    }
+    trap cleanup SIGINT
     
+    echo -ne "\e[?25l"
     while [ "$(ps a | awk '{print $1}' | grep $pid)" ]; do
         local temp=${spinstr#?}
         printf " [%c]" "$spinstr"
@@ -12,6 +19,9 @@ zsh_llm_suggestions_spinner() {
         printf "\b\b\b\b"
     done
     printf "    \b\b\b\b"
+
+    echo -ne "\e[?25h"
+    trap - SIGINT
 }
 
 zsh_llm_suggestions_run_query() {
