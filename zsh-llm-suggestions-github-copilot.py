@@ -14,7 +14,9 @@ def main():
     print("ERROR: something went wrong in zsh-llm-suggestions, please report a bug. Got unknown mode: " + mode)
     return
 
-  if subprocess.run(['gh', 'version'], text=True, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL).returncode != 0:
+  try:
+    subprocess.run(['gh', 'version'], text=True, stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL, check=True)
+  except:
     print(f'echo "{MISSING_PREREQUISITES} Install GitHub CLI first by following https://github.com/cli/cli#installation"')
     return
   
