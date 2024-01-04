@@ -18,7 +18,7 @@ to explain the command.
 Clone the repository:
 
 ```
-git clone git@github.com:stefanheule/zsh-llm-suggestions.git ~/zsh/zsh-llm-suggestions
+git clone https://github.com/stefanheule/zsh-llm-suggestions.git ~/zsh/zsh-llm-suggestions
 ```
 
 Source the script and configure the hotkey in `.zshrc`:
